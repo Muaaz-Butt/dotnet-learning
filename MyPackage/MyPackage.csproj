@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework> <!-- Make sure this matches your .NET version -->
+    <PackageId>MyPackage</PackageId> <!-- Name of your package -->
+    <Version>1.0.0</Version> <!-- Version of the package -->
+    <Authors>Muaaz-Butt</Authors> <!-- Your name or organization -->
+    <Description>A simple package to calculate area.</Description> <!-- Brief description -->
+    <PackageLicenseExpression>MIT</PackageLicenseExpression> <!-- License type -->
+  </PropertyGroup>
+
+</Project>

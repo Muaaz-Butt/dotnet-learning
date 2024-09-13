@@ -1,0 +1,12 @@
+/home/zayyadbutt/Documents/dotnet-learning/MyPackage/bin/Release/net7.0/MyPackage.deps.json
+/home/zayyadbutt/Documents/dotnet-learning/MyPackage/bin/Release/net7.0/MyPackage.dll
+/home/zayyadbutt/Documents/dotnet-learning/MyPackage/bin/Release/net7.0/MyPackage.pdb
+/home/zayyadbutt/Documents/dotnet-learning/MyPackage/obj/Release/net7.0/MyPackage.csproj.AssemblyReference.cache
+/home/zayyadbutt/Documents/dotnet-learning/MyPackage/obj/Release/net7.0/MyPackage.GeneratedMSBuildEditorConfig.editorconfig
+/home/zayyadbutt/Documents/dotnet-learning/MyPackage/obj/Release/net7.0/MyPackage.AssemblyInfoInputs.cache
+/home/zayyadbutt/Documents/dotnet-learning/MyPackage/obj/Release/net7.0/MyPackage.AssemblyInfo.cs
+/home/zayyadbutt/Documents/dotnet-learning/MyPackage/obj/Release/net7.0/MyPackage.csproj.CoreCompileInputs.cache
+/home/zayyadbutt/Documents/dotnet-learning/MyPackage/obj/Release/net7.0/MyPackage.dll
+/home/zayyadbutt/Documents/dotnet-learning/MyPackage/obj/Release/net7.0/refint/MyPackage.dll
+/home/zayyadbutt/Documents/dotnet-learning/MyPackage/obj/Release/net7.0/MyPackage.pdb
+/home/zayyadbutt/Documents/dotnet-learning/MyPackage/obj/Release/net7.0/ref/MyPackage.dll
