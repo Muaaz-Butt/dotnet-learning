@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "cXCnNRAUP0aLEg7VAvZRaRApgf1lgLiE7uuh0CkThoZJrYdZ2z6dkWJOsAs7LvNLU0AIEJF/OcFj+PLjwoMZXQ==",
+  "success": true,
+  "projectFilePath": "/home/zayyadbutt/Documents/dotnet-learning/SE-Lab1/SE-Lab1.csproj",
+  "expectedPackageFiles": [
+    "/home/zayyadbutt/.nuget/packages/atksharp/3.24.24.95/atksharp.3.24.24.95.nupkg.sha512",
+    "/home/zayyadbutt/.nuget/packages/cairosharp/3.24.24.95/cairosharp.3.24.24.95.nupkg.sha512",
+    "/home/zayyadbutt/.nuget/packages/gdksharp/3.24.24.95/gdksharp.3.24.24.95.nupkg.sha512",
+    "/home/zayyadbutt/.nuget/packages/giosharp/3.24.24.95/giosharp.3.24.24.95.nupkg.sha512",
+    "/home/zayyadbutt/.nuget/packages/glibsharp/3.24.24.95/glibsharp.3.24.24.95.nupkg.sha512",
+    "/home/zayyadbutt/.nuget/packages/gtksharp/3.24.24.95/gtksharp.3.24.24.95.nupkg.sha512",
+    "/home/zayyadbutt/.nuget/packages/pangosharp/3.24.24.95/pangosharp.3.24.24.95.nupkg.sha512"
+  ],
+  "logs": []
+}

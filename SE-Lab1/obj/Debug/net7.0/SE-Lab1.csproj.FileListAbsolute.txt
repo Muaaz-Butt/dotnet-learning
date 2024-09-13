@@ -1,0 +1,5 @@
+/home/zayyadbutt/Documents/dotnet-learning/SE-Lab1/obj/Debug/net7.0/SE-Lab1.csproj.AssemblyReference.cache
+/home/zayyadbutt/Documents/dotnet-learning/SE-Lab1/obj/Debug/net7.0/SE-Lab1.GeneratedMSBuildEditorConfig.editorconfig
+/home/zayyadbutt/Documents/dotnet-learning/SE-Lab1/obj/Debug/net7.0/SE-Lab1.AssemblyInfoInputs.cache
+/home/zayyadbutt/Documents/dotnet-learning/SE-Lab1/obj/Debug/net7.0/SE-Lab1.AssemblyInfo.cs
+/home/zayyadbutt/Documents/dotnet-learning/SE-Lab1/obj/Debug/net7.0/SE-Lab1.csproj.CoreCompileInputs.cache
