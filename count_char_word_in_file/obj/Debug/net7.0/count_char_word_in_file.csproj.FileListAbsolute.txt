@@ -1,0 +1,15 @@
+/home/zayyadbutt/Documents/dotnet-learning/count_char_word_in_file/obj/Debug/net7.0/count_char_word_in_file.csproj.AssemblyReference.cache
+/home/zayyadbutt/Documents/dotnet-learning/count_char_word_in_file/obj/Debug/net7.0/count_char_word_in_file.GeneratedMSBuildEditorConfig.editorconfig
+/home/zayyadbutt/Documents/dotnet-learning/count_char_word_in_file/obj/Debug/net7.0/count_char_word_in_file.AssemblyInfoInputs.cache
+/home/zayyadbutt/Documents/dotnet-learning/count_char_word_in_file/obj/Debug/net7.0/count_char_word_in_file.AssemblyInfo.cs
+/home/zayyadbutt/Documents/dotnet-learning/count_char_word_in_file/obj/Debug/net7.0/count_char_word_in_file.csproj.CoreCompileInputs.cache
+/home/zayyadbutt/Documents/dotnet-learning/count_char_word_in_file/bin/Debug/net7.0/count_char_word_in_file
+/home/zayyadbutt/Documents/dotnet-learning/count_char_word_in_file/bin/Debug/net7.0/count_char_word_in_file.deps.json
+/home/zayyadbutt/Documents/dotnet-learning/count_char_word_in_file/bin/Debug/net7.0/count_char_word_in_file.runtimeconfig.json
+/home/zayyadbutt/Documents/dotnet-learning/count_char_word_in_file/bin/Debug/net7.0/count_char_word_in_file.dll
+/home/zayyadbutt/Documents/dotnet-learning/count_char_word_in_file/bin/Debug/net7.0/count_char_word_in_file.pdb
+/home/zayyadbutt/Documents/dotnet-learning/count_char_word_in_file/obj/Debug/net7.0/count_char_word_in_file.dll
+/home/zayyadbutt/Documents/dotnet-learning/count_char_word_in_file/obj/Debug/net7.0/refint/count_char_word_in_file.dll
+/home/zayyadbutt/Documents/dotnet-learning/count_char_word_in_file/obj/Debug/net7.0/count_char_word_in_file.pdb
+/home/zayyadbutt/Documents/dotnet-learning/count_char_word_in_file/obj/Debug/net7.0/count_char_word_in_file.genruntimeconfig.cache
+/home/zayyadbutt/Documents/dotnet-learning/count_char_word_in_file/obj/Debug/net7.0/ref/count_char_word_in_file.dll
