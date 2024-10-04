@@ -44,7 +44,7 @@ class LoginSignupWindow : Window
             {"user4", "pass4"},
             {"user5", "pass5"}
         };
-        totalUserCount = users.Count; // Initialize total user count
+        totalUserCount = users.Count; 
     }
 
     private Widget CreateLoginPage()
@@ -140,7 +140,7 @@ class LoginSignupWindow : Window
         }
 
         users.Add(newUsername, newPassword);
-        totalUserCount++; // Increment total user count
+        totalUserCount++; 
         ShowMessage(MessageType.Info, "Signup Successful", "New user registered. You can now log in.");
         notebook.Page = 0; 
     }
@@ -265,8 +265,8 @@ class HomePage : Window
 
     private void OnLogoutClicked(object sender, EventArgs args)
     {
-        this.Destroy(); // Close the home page
-        loginWindow.Show(); // Show the login/signup window again
+        this.Destroy();
+        loginWindow.Show(); 
     }
 
     private void ShowMessage(MessageType messageType, string title, string message)
