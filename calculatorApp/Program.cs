@@ -1,5 +1,6 @@
 ﻿using Gtk;
 using System;
+using System.Collections.Generic;
 
 class CalculatorApp : Window
 {
@@ -7,9 +8,10 @@ class CalculatorApp : Window
     private double result = 0;
     private string lastOperator;
     private bool newInput = true;
-
+    private List<string> history; 
     public CalculatorApp() : base("Simple Calculator")
     {
+        history = new List<string>(); 
         SetDefaultSize(250, 200);
         SetPosition(WindowPosition.Center);
         DeleteEvent += delegate { Application.Quit(); };
@@ -18,12 +20,13 @@ class CalculatorApp : Window
         display = new Entry();
         vbox.PackStart(display, false, false, 5);
 
-        Table table = new Table(4, 4, true);
+        Table table = new Table(5, 4, true); 
 
         string[] labels = { "7", "8", "9", "/",
                             "4", "5", "6", "*",
                             "1", "2", "3", "-",
-                            "0", "C", "=", "+" };
+                            "0", "C", "=", "+",
+                            "History" }; 
 
         uint i = 0;
         foreach (string label in labels)
@@ -67,14 +70,21 @@ class CalculatorApp : Window
                     break;
                 case "=":
                     Calculate(double.Parse(display.Text));
-                    display.Text = result.ToString();
+                    string calculationResult = result.ToString();
+                    history.Add($"{display.Text} = {calculationResult}"); 
+                    display.Text = calculationResult;/
                     newInput = true;
                     lastOperator = "";
+                    break;
+                case "History":
+                    ShowHistory(); 
                     break;
                 default:
                     if (!newInput)
                     {
                         Calculate(double.Parse(display.Text));
+                        string currentExpression = $"{result} {lastOperator} {display.Text}";
+                        history.Add(currentExpression + $" = {result}"); 
                         display.Text = result.ToString();
                         newInput = true;
                     }
@@ -98,12 +108,33 @@ class CalculatorApp : Window
                 result *= input;
                 break;
             case "/":
-                result /= input;
+                if (input != 0)
+                    result /= input;
+                else
+                    display.Text = "Error"; 
                 break;
             default:
                 result = input;
                 break;
         }
+    }
+
+    void ShowHistory()
+    {
+        if (history.Count == 0)
+        {
+            MessageDialog dialog = new MessageDialog(this, DialogFlags.DestroyWithParent, MessageType.Info, ButtonsType.Ok, "No history available.");
+            dialog.Title = "History";
+            dialog.Run();
+            dialog.Destroy();
+            return;
+        }
+
+        string historyText = string.Join("\n", history);
+        MessageDialog historyDialog = new MessageDialog(this, DialogFlags.DestroyWithParent, MessageType.Info, ButtonsType.Ok, historyText);
+        historyDialog.Title = "Calculation History";
+        historyDialog.Run();
+        historyDialog.Destroy();
     }
 
     public static void Main()
