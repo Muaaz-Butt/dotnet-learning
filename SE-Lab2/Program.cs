@@ -18,6 +18,7 @@ class LoginSignupWindow : Window
     private Entry passwordEntry;
     private Dictionary<string, string> users;
     private Notebook notebook;
+    private int totalUserCount;
 
     public LoginSignupWindow() : base("Login/Signup Page")
     {
@@ -43,6 +44,7 @@ class LoginSignupWindow : Window
             {"user4", "pass4"},
             {"user5", "pass5"}
         };
+        totalUserCount = users.Count; // Initialize total user count
     }
 
     private Widget CreateLoginPage()
@@ -105,7 +107,7 @@ class LoginSignupWindow : Window
         if (users.TryGetValue(username, out string storedPassword) && password == storedPassword)
         {
             ShowMessage(MessageType.Info, "Login Successful!", "Welcome, " + username + "!");
-            new HomePage(username, users, this);
+            new HomePage(username, users, this, ref totalUserCount);
             this.Hide();
         }
         else
@@ -131,12 +133,14 @@ class LoginSignupWindow : Window
             ShowMessage(MessageType.Error, "Signup Failed", "Username already exists.");
             return;
         }
-        if (newPassword != confirmPassword){
-          ShowMessage(MessageType.Error, "Signup Failed", "Passwords do not match.");
-          return;
+        if (newPassword != confirmPassword)
+        {
+            ShowMessage(MessageType.Error, "Signup Failed", "Passwords do not match.");
+            return;
         }
 
         users.Add(newUsername, newPassword);
+        totalUserCount++; // Increment total user count
         ShowMessage(MessageType.Info, "Signup Successful", "New user registered. You can now log in.");
         notebook.Page = 0; 
     }
@@ -150,6 +154,11 @@ class LoginSignupWindow : Window
             dialog.Destroy();
         }
     }
+
+    public void UpdateTotalUserCount(int newCount)
+    {
+        totalUserCount = newCount;
+    }
 }
 
 class HomePage : Window
@@ -157,12 +166,14 @@ class HomePage : Window
     private string username;
     private Dictionary<string, string> users;
     private LoginSignupWindow loginWindow;
+    private int totalUserCount;
 
-    public HomePage(string username, Dictionary<string, string> users, LoginSignupWindow loginWindow) : base("Home Page")
+    public HomePage(string username, Dictionary<string, string> users, LoginSignupWindow loginWindow, ref int totalUserCount) : base("Home Page")
     {
         this.username = username;
         this.users = users;
         this.loginWindow = loginWindow;
+        this.totalUserCount = totalUserCount;
 
         SetDefaultSize(300, 200);
         SetPosition(WindowPosition.Center);
@@ -173,9 +184,16 @@ class HomePage : Window
         Label welcomeLabel = new Label($"Welcome, {username}!");
         vbox.PackStart(welcomeLabel, false, false, 0);
 
+        Label totalUsersLabel = new Label($"Total Users: {totalUserCount}");
+        vbox.PackStart(totalUsersLabel, false, false, 0);
+
         Button changePasswordButton = new Button("Change Password");
         changePasswordButton.Clicked += OnChangePasswordClicked;
         vbox.PackStart(changePasswordButton, false, false, 0);
+
+        Button deleteButton = new Button("Delete User");
+        deleteButton.Clicked += OnDeleteUserClicked;
+        vbox.PackStart(deleteButton, false, false, 0);
 
         Button logoutButton = new Button("Logout");
         logoutButton.Clicked += OnLogoutClicked;
@@ -221,10 +239,34 @@ class HomePage : Window
         dialog.ShowAll();
     }
 
+    private void OnDeleteUserClicked(object sender, EventArgs args)
+    {
+        bool confirm = ShowConfirmationDialog("Confirm Delete", "Are you sure you want to delete your account?");
+        if (confirm)
+        {
+            users.Remove(username); 
+            totalUserCount--; 
+            loginWindow.UpdateTotalUserCount(totalUserCount);
+
+            ShowMessage(MessageType.Info, "Account Deleted", "Your account has been deleted.");
+            this.Destroy();
+            loginWindow.Show(); 
+        }
+    }
+
+    private bool ShowConfirmationDialog(string title, string message)
+    {
+        using (var dialog = new MessageDialog(this, DialogFlags.Modal, MessageType.Question, ButtonsType.YesNo, message))
+        {
+            dialog.Title = title;
+            return dialog.Run() == (int)ResponseType.Yes;
+        }
+    }
+
     private void OnLogoutClicked(object sender, EventArgs args)
     {
-        this.Destroy();
-        loginWindow.Show();
+        this.Destroy(); // Close the home page
+        loginWindow.Show(); // Show the login/signup window again
     }
 
     private void ShowMessage(MessageType messageType, string title, string message)
